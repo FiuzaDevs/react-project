@@ -1,10 +1,16 @@
 import React from 'react';
 import './App.css';
+import { AuthProvider } from './context/auth.context';
 import Routes from './router';
 
 function App() {
   return (
-    <Routes />
+    <>
+    {/*@ts-ignore*/}
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
+    </>
   );
 }
 
