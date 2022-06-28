@@ -1,4 +1,4 @@
-<h1 align="center">CLUBE-BELEZINHA-ACCESS-CONTROL-API</h1>
+<h1 align="center">ACCESS-CONTROL-API</h1>
 
 ## :computer: Requisitos
 
@@ -32,40 +32,11 @@ $ docker-compose up -d
 ``` sh
 PORT=4000
 ENABLE_CORS=true
-JWT_KEY=string
-JWT_EXPIRATION=28800
-NOSQL_CONNECTION_STRING=mongodb://cb:Passw0rd@ec2-3-95-198-237.compute-1.amazonaws.com/clube-belezinha
-PAYLOAD_KEY=string
-SENDGRID_API_KEY=string
-SENDGRID_EMAIL_SENDER=email
-FRONTEND_BACKOFFICE_URL=http://localhost:4200
-FIRST_ACCESS_ROUTE=/code
-CHANGE_PASSWORD_ROUTE=/change-password
+JWT_KEY=9fd26a11-a1a6-4dfd-b754-78b56f9d7c30
+PAYLOAD_KEY=78e5ecc2-18f2-4cba-8268-a07f8a414af7
+JWT_EXPIRATION=1d
+NOSQL_CONNECTION_STRING=mongodb://admin:Passw0rd@127.0.0.1:30000/access-app
 ```
-
-| Definition | Description |
-| ---------- | ----------- |
-| **PORT** | Porta em que a API será iniciada |
-| **ENABLE_CORS** | Permite obter dados da mesma origem em que a API está sendo executada |
-| **JWT_KEY** | Chave utilizada na criptografia do JWT |
-| **JWT_EXPIRATION** | Tempo de expiração do token JWT |
-| **NOSQL_CONNECTION_STRING** | Conexão para acesso do banco de dados |
-| **PAYLOAD_KEY** | Chave utilizada na criptografia do payload. Deve ser compartilhada com quem consumirá a API |
-| **SENDGRID_API_KEY** | Chave utilizada para envio de e-mails. |
-| **SENDGRID_EMAIL_SENDER** | E-mail utilizado para o envio de mensagens. Feve ser cadastrado como sender no SENDGRID |
-| **FRONTEND_BACKOFFICE_URL** | URL do backoffice frontend |
-| **FIRST_ACCESS_ROUTE** | Rota para o primeiro acesso |
-| **CHANGE_PASSWORD_ROUTE** | Rota para a troca da senha |
-
-**3**. No diretório raiz da API execute o comando:
-
-``` sh
-$ npm run seed
-```
-Esse comando vai criar as roles e o usuário padrão.
-
-- **Usuário:** admin@clubebelezinha.com.br
-- **Senha:** P@ssw0rd
 
 ## Executando a API
 
@@ -83,6 +54,9 @@ $ npm run start:prod
 ## Documentação
 
 Após executar a api acesse http://localhost:4000/docs
+
+Infelimente não conseguir implementar o seed, então usando o swagger, você pode cadastrar o usuarios usando a API.
+no meotodo register coloque o email ficticio e a senha. Por essas questões tirei o crptografia da senha.
 
 ## Testes
 
